@@ -29,3 +29,5 @@ vlc will open on your PC and start playing the video
 if that doesnt work, try firefox or the latest chrome
 if that doesnt work open CMD and try `app.vbs vlc://http://techslides.com/demos/sample-videos/small.mp4`
 if that doesnt work, install vlc bro
+
+PS: Only applyConfigFile.vbs requires admin rights for writing on the registry, but you don't need to run it if you can write the reg changes yourself. just set path to app.vbs "%1"
