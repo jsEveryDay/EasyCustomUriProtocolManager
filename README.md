@@ -1,6 +1,6 @@
 # EasyCustomUriProtocolManager
 
-Basically, all custom URI's are registered to the app.vbs file, when app runs, it reads the URIconfigs.ini on what program to run, with what arguments for whatever protocol scheme was just ran. Write your URI's with their designated apps directly on the ini file, without having to manage registry changes or creating batch files to parse arguments.
+All custom URI's are registered to the app.vbs file, when app runs, it reads the URIconfigs.ini on what program to run, with what arguments for whatever protocol scheme was just ran. Write your URI's with their designated apps directly on the ini file, without having to manage registry changes or creating batch files to parse arguments.
 
 use `_##_` as a separator to avoid issues with urls that may contain many special characters (csv may be easier but urls contain commas sometimes)
 
@@ -11,6 +11,8 @@ This is the pattern for the config.ini file which serves like a "database"
 If you open your browser to `YourProtocol://https://ex.com/path, -/hah!*%"` this is what will actually execute:
 
 `WScript.exe C:\saved\app.vbs "C:\Local Folder\program.exe" -arg /t --pass =to ^exe "https://ex.com/path, -/hah!*%`
+
+(command '-/hah!*%' is used to indicate that all special characters work)
 
 1. After any change made to URIconfigs.ini you must run applyConfigFile.vbs (this registers new Protocols to the windows registry)
 2. Paths and Arguments will work in any format (with spaces, special characters etc..)
